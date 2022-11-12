@@ -19,15 +19,18 @@ timeEl.innerHTML = `${
   now.getHours() > 9 ? now.getHours() : '0' + now.getHours()
 }:${now.getMinutes() > 9 ? now.getMinutes() : '0' + now.getMinutes()}`;
 
+let tempCelcium;
+let temperatureEl = document.querySelector('#temperature');
+
 function displayWeatherData(response) {
   let temp = Math.round(response.data.main.temp);
+  tempCelcium = temp;
   let description = response.data.weather[0].description;
   let city = response.data.name;
   let humidity = response.data.main.humidity;
   let wind = response.data.wind.speed;
 
   let cityEl = document.querySelector('#city');
-  let temperatureEl = document.querySelector('#temperature');
   let descriptionEl = document.querySelector('#description');
   let humidityEl = document.querySelector('#humidity');
   let windEl = document.querySelector('#wind');
@@ -63,3 +66,21 @@ function searchHandler(event) {
 document
   .querySelector('#search-form')
   .addEventListener('submit', searchHandler);
+
+function changeMeasurements(event) {
+  event.preventDefault();
+  if (tempCelcium) {
+    if (event.target.id === 'celcium') {
+      temperatureEl.innerHTML = tempCelcium;
+    } else {
+      temperatureEl.innerHTML = Math.round(tempCelcium * (9 / 5) + 32);
+    }
+    document
+      .querySelectorAll('.measurements a')
+      .forEach((el) => el.classList.toggle('active-meas'));
+  }
+}
+
+document
+  .querySelectorAll('.measurements a')
+  .forEach((el) => el.addEventListener('click', changeMeasurements));
