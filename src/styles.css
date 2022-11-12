@@ -65,6 +65,12 @@ a.active-meas {
 a.active-meas:hover {
     opacity: 1;
 }
+.footer {
+    text-align: center;
+    margin: 10px auto;
+    font-size: 12px;
+    opacity: 0.5;
+}
 /*
 rgb(241, 246, 249)
 F1F6F9
