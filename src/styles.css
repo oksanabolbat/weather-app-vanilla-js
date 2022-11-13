@@ -62,6 +62,18 @@ form {
     font-size: 12px;
     opacity: 0.5;
 }
+.temp-max {
+    font-weight: 700;
+}
+.forecast-icon img {
+    width: 45px;
+}
+.forecast-temp {
+    opacity: 0.8;
+}
+.forecast-wind {
+    font-size: 10px;
+}
 /*
 rgb(241, 246, 249)
 F1F6F9
