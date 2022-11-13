@@ -101,24 +101,6 @@ document
   .querySelector('#search-form')
   .addEventListener('submit', searchHandler);
 
-function changeMeasurements(event) {
-  event.preventDefault();
-  if (tempCelcium) {
-    if (event.target.id === 'celcium') {
-      temperatureEl.innerHTML = tempCelcium;
-    } else {
-      temperatureEl.innerHTML = Math.round(tempCelcium * (9 / 5) + 32);
-    }
-    document
-      .querySelectorAll('.measurements a')
-      .forEach((el) => el.classList.toggle('active-meas'));
-  }
-}
-
-document
-  .querySelectorAll('.measurements a')
-  .forEach((el) => el.addEventListener('click', changeMeasurements));
-
 function getWeatherDataByCoords(lat, lon) {
   axios
     .get(

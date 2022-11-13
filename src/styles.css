@@ -50,21 +50,12 @@ form {
     text-transform: uppercase;
 }
 
-.measurements a {
-    cursor: pointer;
-    text-decoration: none;
-    color: inherit;
-}
-.measurements a:hover {
+.measurement {
     opacity: 0.5;
-}
-a.active-meas {
+    color: inherit;
     font-weight: 700;
-    cursor: auto;
 }
-a.active-meas:hover {
-    opacity: 1;
-}
+
 .footer {
     text-align: center;
     margin: 10px auto;
